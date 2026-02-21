@@ -1,9 +1,46 @@
+/* =========================================
+   UNIFIED PAGE HEADERS (ALL PAGES EQUAL)
+   ========================================= */
+/* Target all title containers at once */
+.mainTitle, 
+#aboutTitle, 
+#masteryTitle, 
+#courseTitle, 
+#mainTitle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* This sets the distance from the top of the browser */
+    margin-top: 100px !important; 
+    margin-bottom: 20px !important;
+    
+    /* Reset heights so they are all the same */
+    height: auto !important;
+    min-height: 150px !important;
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+/* Force all H1s inside these titles to behave exactly the same */
+.mainTitle h1, 
+.small-header h1,
+#aboutTitle h1, 
+#masteryTitle h1, 
+#courseTitle h1 {
+    margin: 0 !important; /* Removes the 280px or 150px gaps */
+    padding: 0 !important;
+    font-size: clamp(50px, 10vw, 110px) !important;
+    line-height: 1.1 !important;
+}
 /* ===== Sticky Header ===== */
 #site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(6px);
     z-index: 1000;
 }
@@ -328,8 +365,7 @@ p {
 .testimonial {
     width: 350px;
     padding: 25px;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.7) !important; /* Dark semi-transparent */    backdrop-filter: blur(5px);
     border-radius: 15px;
     color: white;
     font-size: 18px;
@@ -1401,4 +1437,5 @@ p {
     /* Desktop Logic: 3 per row (minus gap) */
     flex: 0 1 calc(33.333% - 25px); 
     min-width: 300px; /* Prevents them from getting too skinny */
+}
 }
