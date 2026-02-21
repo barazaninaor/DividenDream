@@ -240,6 +240,8 @@ body {
     animation: fadeIn 0.05s forwards;
 }
 
+
+
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -276,6 +278,30 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+h2.subTitle{
+    font-size: 60px;
+}
+
+/* Phone Style (Mobile) */
+@media (max-width: 768px) {
+    h2.subTitle {
+        /* 1. The Secret Sauce: Keeps padding INSIDE the 100% width */
+        box-sizing: border-box !important; 
+        
+        /* 2. Size & Alignment */
+        font-size: 36px !important; 
+        text-align: center !important;
+        line-height: 1.2 !important;
+        
+        /* 3. Spacing */
+        width: 100% !important;
+        padding: 0 25px !important; /* Increased to 25px to keep it away from edges */
+        margin: 20px auto !important; /* 'auto' centers the block itself */
+        
+        display: block !important;
+    }
 }
 
 /* ===== IMAGES ===== */
@@ -933,7 +959,7 @@ p {
 }
 
 .cta-box p {
-    font-size: 50px;
+    font-size: 30px;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 40px;
 }
@@ -948,7 +974,7 @@ p {
 
     .cta-box h2 {
         /* This makes it significantly bigger on phone */
-        font-size: 38px !important; 
+        font-size: 50px !important; 
         line-height: 1.1 !important;
         padding: 0 10px;
     }
@@ -1461,4 +1487,3 @@ p {
     min-width: 300px; /* Prevents them from getting too skinny */
 }
 }
-
