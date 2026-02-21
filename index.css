@@ -1105,83 +1105,163 @@ p {
 
 
 
-/* --- RESPONSIVE ONLY (Does not affect desktop) --- */
+/* --- Universal 100% Width Video Fix --- */
+
+.video-section {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    /* 62% is the 'Goldilocks' ratio: 
+       Wide enough for standard videos, tall enough for your portfolio stats */
+    padding-bottom: 62.5%; 
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    /* Forces the video to cover the area without black side bars */
+    object-fit: cover; 
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (min-width: 1024px) {
+    /* On large screens, we don't want the video to be INFINITELY wide 
+       otherwise it becomes too tall to see the whole thing at once */
+    .video-wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        padding-bottom: 506px; /* Fixed height for consistent look on PC */
+    }
+}
 
 @media (max-width: 768px) {
-    /* 1. Force containers to stay within phone width */
+    .video-wrapper {
+        padding-bottom: 65%; /* Slightly taller on mobile for better visibility */
+    }
+    
+    .glass-card {
+        padding: 15px; /* Gives more room for the video to be wide */
+    }
+}
+
+/* --- Snowball Analytics Targeted Tall Fix --- */
+
+/* Only affects the video inside the snowballContainer */
+#snowballContainer .video-wrapper {
+    position: relative;
+    width: 100%;
+    /* 75% creates the 4:3 ratio to fit your specific thumbnail height */
+    padding-bottom: 75%; 
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 12px;
+}
+
+#snowballContainer .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Desktop sizing for Snowball specifically */
+@media (min-width: 769px) {
+    #snowballContainer .video-section {
+        max-width: 750px; 
+        margin: 20px auto;
+    }
+}
+
+
+/* --- CLEAN MOBILE RESPONSIVENESS --- */
+
+@media (max-width: 768px) {
+    /* Prevent horizontal scrolling globally */
     html, body {
         overflow-x: hidden;
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
-    #divAroundAll, 
-    .about-page-container, 
-    .glass-card {
-        width: 95% !important; /* Prevents the "huge" fixed width */
-        max-width: 100vw !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding: 15px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 2. Fix the Navigation Bar */
-    .hamburger {
-        display: block !important; /* Show hamburger only on mobile */
-    }
-
-    .nav-links {
-        display: none; /* Hide horizontal links */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
+    /* Fix Containers: Use padding instead of forced widths */
+    #divAroundAll {
+        padding: 10px;
         width: 100%;
-        background: white; /* Or your site's background color */
-        z-index: 1000;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
     }
 
-    .nav-links.show {
-        display: flex !important; /* Show when clicked */
+    .about-page-container {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 0 !important;
     }
 
-    /* Hide the desktop Enroll button so it doesn't break the header layout */
-    .navbar > .cta-button {
-        display: none !important;
+    .glass-card {
+        width: 100% !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+        border-radius: 15px;
     }
 
-    /* 3. Stack the Article Items */
-    .article-item {
+    /* Grid Fix: Stack the Mastery Cards vertically */
+    .mastery-grid {
+        display: flex !important;
         flex-direction: column !important;
-        text-align: center !important;
-        align-items: center !important;
-    }
-
-    .article-icon {
-        margin-right: 0 !important;
-        margin-bottom: 15px !important;
-    }
-
-    /* 4. Fix Footer */
-    .footer-top {
-        flex-direction: column !important;
-        text-align: center !important;
         gap: 20px !important;
     }
 
-    .footer-socials {
-        flex-direction: column !important;
-        align-items: center !important;
+    /* Navigation Fix */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9); /* Match your theme */
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        text-align: center;
     }
 
-    /* 5. Scale down fonts so they don't push the width */
-    h1 { font-size: 24px !important; }
-    h2 { font-size: 20px !important; }
-    
-    /* Ensure images don't exceed screen width */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Footer Fix */
+    .footer-top {
+        flex-direction: column !important;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .footer-socials {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Specific Snowball Video height for Mobile */
+    #snowballContainer .video-wrapper {
+        padding-bottom: 85% !important; /* Slightly taller on mobile for better visibility */
     }
 }

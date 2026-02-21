@@ -28,7 +28,7 @@
           <li><a href="dividend-course.html">Dividend Free Course</a></li>
           <li><a href="dividend-portfolio.html">Dividend Portfolio</a></li>
           <li><a href="dividend-articles.html">Dividend Articles</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="naor-barazani.html">About</a></li>
         </ul>
 
         <a
@@ -37,7 +37,6 @@
           class="cta-button"
           >Enroll Now</a
         >
-
         <div class="hamburger" onclick="toggleMenu()">☰</div>
       </nav>
     </header>
@@ -59,10 +58,7 @@
               <div class="description-text">
                 <p>
                   The Freedom Portfolio is a demonstration portfolio managed for
-                  educational purposes. Created as part of a course curriculum,
-                  it serves as a practical showcase of investment decisions,
-                  including buying and selling strategies, rationale behind
-                  choices, and insights into selected companies.
+                  educational purposes...
                 </p>
                 <p>
                   Its main purpose is to demonstrate the possibility of
@@ -84,9 +80,7 @@
               <h3>Disclaimer</h3>
               <p>
                 The content presented in the portfolio is for educational
-                purposes only. It does not constitute financial advice, and any
-                actions taken based on the information provided are at the
-                individual’s own risk.
+                purposes only.
               </p>
             </div>
           </section>
@@ -111,14 +105,11 @@
               <div class="description-text">
                 <p>
                   On January 2025, I started a new dividend growth portfolio
-                  focused on long-term compounding and sustainable yield
-                  increases. This portfolio tracks the journey from the very
-                  first deposit.
+                  focused on long-term compounding. Check it out!
                 </p>
               </div>
             </div>
           </section>
-
           <div class="cta-box">
             <a
               target="_blank"
@@ -139,9 +130,8 @@
               <div class="description-text">
                 <p>
                   To maintain clarity and precision across my investments, I use
-                  Snowball Analytics. It allows me to automate dividend
-                  tracking, visualize compounding growth, and ensure my
-                  diversification stays within my target range.
+                  Snowball Analytics. Watch the video below to see how I
+                  automate my tracking! 👇
                 </p>
               </div>
             </div>
@@ -162,9 +152,9 @@
                   picture-in-picture;
                   web-share;
                 "
-                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
-              ></iframe>
+              >
+              </iframe>
             </div>
           </div>
 
@@ -197,7 +187,6 @@
                 >GET STARTED</a
               >
             </div>
-
             <div class="m-card">
               <i class="fas fa-tools"></i>
               <h3>Simplify Management</h3>
@@ -210,13 +199,11 @@
                 >SIGN UP FREE</a
               >
             </div>
-
             <div class="m-card">
               <i class="fas fa-play-circle"></i>
               <h3>Free Education</h3>
               <p>Watch the course for free first.</p>
               <a
-                target="_blank"
                 href="dividend-course.html"
                 class="skill-pill large-pill"
                 style="margin-top: 15px; font-size: 14px"
@@ -227,74 +214,42 @@
         </div>
       </div>
     </div>
+
     <footer class="site-footer fade">
       <div class="footer-top">
         <div class="footer-socials">
-          <a href="https://instagram.com/dividenddreamaster" target="_blank">
-            <i class="fab fa-instagram"></i> dividenddreamaster
-          </a>
+          <a href="https://instagram.com/dividenddreamaster" target="_blank"
+            ><i class="fab fa-instagram"></i> dividenddreamaster</a
+          >
           <a
             href="https://www.youtube.com/@MonthlyPassiveIncome?sub_confirmation=1"
             target="_blank"
+            ><i class="fab fa-youtube"></i> Explore More</a
           >
-            <i class="fab fa-youtube"></i> Explore More
-          </a>
-          <a href="mailto:dividendream@gmail.com">
-            <i class="fas fa-envelope"></i> dividendream@gmail.com
-          </a>
+          <a href="mailto:dividendream@gmail.com"
+            ><i class="fas fa-envelope"></i> dividendream@gmail.com</a
+          >
         </div>
-
         <div class="footer-right">
           <a
             target="_blank"
             href="https://www.udemy.com/course/passive_income/?referralCode=DCB61C494E0730210CDB"
             class="enroll-btn"
+            >Enroll Now</a
           >
-            Enroll Now
-          </a>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>COPYRIGHT © NAOR BARAZANI</p>
-      </div>
+      <div class="footer-bottom"><p>COPYRIGHT © NAOR BARAZANI</p></div>
     </footer>
 
     <script src="index.js"></script>
-
     <script>
       function toggleMenu() {
         const menu = document.getElementById("navMenu");
         menu.classList.toggle("show");
       }
-
       document.querySelectorAll(".fade").forEach((el, i) => {
         el.style.animationDelay = `${i * 0.3}s`;
-      });
-
-      let lastScrollY = window.scrollY;
-      window.addEventListener("scroll", () => {
-        const header = document.getElementById("site-header");
-        if (window.innerWidth <= 900) {
-          if (window.scrollY > lastScrollY) {
-            header.classList.add("hide");
-          } else {
-            header.classList.remove("hide");
-          }
-        }
-        lastScrollY = window.scrollY;
-      });
-
-      document.addEventListener("click", (e) => {
-        const menu = document.getElementById("navMenu");
-        if (menu && menu.classList.contains("show")) {
-          if (
-            e.target.closest(".nav-links a") ||
-            (!e.target.closest(".nav-links") && !e.target.closest(".hamburger"))
-          ) {
-            menu.classList.remove("show");
-          }
-        }
       });
     </script>
   </body>
