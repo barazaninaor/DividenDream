@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* =========================================
    UNIFIED PAGE HEADERS (ALL PAGES EQUAL)
    ========================================= */
@@ -37,19 +43,23 @@
 }
 /* ===== Sticky Header ===== */
 #site-header {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* קו רק למטה */
     z-index: 1000;
 }
 
+
 .navbar {
+    background: transparent !important;
     display: flex;
     justify-content: flex-start; /* Groups items to the left */
     align-items: center;
-    padding: 10px 40px;
+    padding: 5px 40px;
+    min-height: 10px;
     gap: 30px; /* This controls the space between Logo and Menu */
 }
 
@@ -92,17 +102,6 @@
 
 .nav-links li a:hover {
     color: #00C0C0;
-}
-
-/* ===== Sticky Header ===== */
-#site-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(6px);
-    z-index: 1000;
-    transition: transform 0.3s ease;
 }
 
 /* Hide on scroll */
@@ -233,6 +232,41 @@ body {
     font-style: normal;
     padding: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        /* 1. Core: Intense Cyan (#00d2ff)
+           2. Inner Glow: Electric Blue (#0077ff)
+           3. Nebula: Deep Purple (#411464) 
+           4. Space: Deep Black (#060b10)
+        */
+        background: radial-gradient(circle at center, 
+            rgba(0, 210, 255, 0.4) 0%,    /* Brighter, larger Cyan core */
+            rgba(0, 119, 255, 0.3) 20%,   /* Deep Electric Blue layer */
+            rgba(65, 20, 100, 0.5) 50%,   /* Purple nebula glow starts further out */
+            rgba(6, 11, 16, 1) 90%        /* Deep space black at the very edges */
+        ) !important;
+        
+        background-attachment: fixed !important;
+        background-size: cover !important;
+        background-color: #060b10 !important; /* Solid fallback */
+        min-height: 100vh;
+        
+        /* Fix for mobile viewports */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Bonus: Update your titles to match the new Blue-heavy look */
+    .mainTitle h1, #masteryTitle h1, #courseTitle h1 {
+        background: linear-gradient(to bottom, #ffffff 0%, #00d2ff 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        text-shadow: 0px 0px 20px rgba(0, 210, 255, 0.4) !important;
+    }
+}
+
+
 
 .fade {
     opacity: 0;
