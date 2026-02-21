@@ -938,6 +938,28 @@ p {
     margin-bottom: 40px;
 }
 
+/* --- MOBILE REPAIR (The Fix for Phone) --- */
+@media (max-width: 768px) {
+    .cta-box {
+        padding: 40px 20px; /* Reduced padding gives text more horizontal room */
+        width: 95%;
+        margin: 40px auto;
+    }
+
+    .cta-box h2 {
+        /* This makes it significantly bigger on phone */
+        font-size: 38px !important; 
+        line-height: 1.1 !important;
+        padding: 0 10px;
+    }
+
+    .cta-box p {
+        font-size: 18px !important;
+        padding: 0 10px;
+        line-height: 1.4;
+    }
+}
+
 /* The Primary Button (ENROLL IN THE COURSE) */
 .skill-pill.large-pill {
     display: inline-block;
