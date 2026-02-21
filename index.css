@@ -1188,3 +1188,109 @@ p {
         margin: 20px auto;
     }
 }
+
+/* =========================================
+   MOBILE-ONLY REPAIR (768px and below)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 1. Fix the Title "Dividend Mastery" (Stops it from leaking) */
+    .mainTitle, #mainTitle, #masteryTitle, #courseTitle, #aboutTitle {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 80px auto 20px auto !important; /* Space for header */
+        padding: 20px !important;
+        display: flex !important;
+        border-radius: 0 !important; /* Removes the 150px circle on mobile */
+    }
+
+    .mainTitle h1, #masteryTitle h1, #courseTitle h1, .hero-title-large {
+        font-size: 32px !important; /* Shrinks the giant 110px font */
+        margin-top: 0 !important;
+        line-height: 1.2 !important;
+    }
+
+    /* 2. Fix Horizontal Scrolling (The #1 reason sites look 'destroyed') */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Navbar & Hamburger Fix */
+    .navbar {
+        padding: 10px 15px !important;
+        justify-content: space-between !important;
+        flex-direction: row !important;
+        gap: 0 !important;
+    }
+
+    .navbar img {
+        width: 140px !important; /* Smaller logo for phone */
+        height: auto !important;
+    }
+
+    .hamburger {
+        display: block !important; /* Force show the menu icon */
+    }
+
+    .nav-links {
+        display: none; /* Controlled by your JS 'show' class */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column !important;
+        margin: 0 !important;
+        padding: 20px 0 !important;
+    }
+
+    /* 4. Glass Cards & Columns (Forces them to stack) */
+    .glass-card, .about-container {
+        width: 92% !important;
+        padding: 20px !important;
+        margin: 10px auto !important;
+    }
+
+    #benefits, .three-columns, .testimonial-container, .mastery-grid, .identity-grid {
+        flex-direction: column !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+
+    .col, .testimonial, .m-card {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 5. Images & Videos (Stops them from being 800px wide) */
+    img, #video-container iframe, .video-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    #snowballContainer .video-wrapper {
+        padding-bottom: 75% !important; /* Keep the specific ratio you liked */
+    }
+
+    /* 6. Footer Fix */
+    .site-footer {
+        width: 95% !important;
+        padding: 30px 15px !important;
+        background-size: cover !important;
+    }
+
+    .footer-top {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .footer-socials a {
+        min-width: 100% !important; /* Full width buttons on phone */
+    }
+}
