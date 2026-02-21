@@ -933,7 +933,7 @@ p {
 }
 
 .cta-box p {
-    font-size: 30px;
+    font-size: 50px;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 40px;
 }
@@ -1461,3 +1461,4 @@ p {
     min-width: 300px; /* Prevents them from getting too skinny */
 }
 }
+
