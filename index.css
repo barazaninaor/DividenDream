@@ -1339,3 +1339,26 @@ p {
         padding: 0 15px !important;
     }
 }
+
+.mastery-grid, .testimonial-container, .three-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0 15px; /* Side breathing room */
+    box-sizing: border-box;
+}
+
+/* Apply this to ALL your card types */
+.m-card, .testimonial, .col {
+    width: 100% !important; /* Take full width on small screens */
+    max-width: 350px !important; /* But never bigger than 350px */
+    box-sizing: border-box !important; /* Forces padding to stay INSIDE the box */
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
