@@ -816,16 +816,25 @@ p {
     }
 }
 
-/* Hero Title Styling */
 .hero-title-large {
-    font-size: 80px !important;
+    /* Keeps your size and the -5px that fixed the width for you */
+    font-size: clamp(30px, 8vw, 70px) !important; 
+    letter-spacing: -5px !important; 
     font-weight: 900;
     text-align: center;
     color: white;
     text-transform: uppercase;
+    
+    /* CRITICAL FIXES: */
+    line-height: 1.1 !important;   /* Changed from 1px so lines don't overlap */
+    word-wrap: normal !important;  /* Stops the word from breaking into single letters */
+    overflow-wrap: normal !important;
+    
     margin-bottom: 40px;
-    line-height: 0.9;
-    letter-spacing: -2px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 /* Container for the text items */
@@ -1340,25 +1349,33 @@ p {
     }
 }
 
+/* =========================================
+   GRID SYSTEM (3 Columns Desktop / 1 Column Mobile)
+   ========================================= */
 .mastery-grid, .testimonial-container, .three-columns {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     width: 100%;
-    padding: 0 15px; /* Side breathing room */
-    box-sizing: border-box;
+    max-width: 1200px; /* Limits width on big screens */
+    margin: 0 auto; /* Centers the whole grid */
+    padding: 20px;
+    box-sizing: border-box; /* Crucial: keeps padding inside the width */
 }
 
-/* Apply this to ALL your card types */
+/* THE CARDS (Fixed for both Desktop & Mobile) */
 .m-card, .testimonial, .col {
-    width: 100% !important; /* Take full width on small screens */
-    max-width: 350px !important; /* But never bigger than 350px */
-    box-sizing: border-box !important; /* Forces padding to stay INSIDE the box */
-    margin: 10px 0;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 30px;
+    color: white;
     text-align: center;
+    box-sizing: border-box !important;
+    
+    /* Desktop Logic: 3 per row (minus gap) */
+    flex: 0 1 calc(33.333% - 25px); 
+    min-width: 300px; /* Prevents them from getting too skinny */
 }
